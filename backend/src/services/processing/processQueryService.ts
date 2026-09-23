@@ -1,7 +1,7 @@
 import { createChunks } from "./chunkService";
 import { processBatch, type ChunkBatchItem } from "./processBatchService";
 
-// Orchestrates the query processing pipeline: user validation, chunking, batch embedding, and vector storage.
+
  
 export const processQueryService = async (userId: string, textData: string) => {
   try {

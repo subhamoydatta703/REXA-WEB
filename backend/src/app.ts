@@ -4,6 +4,7 @@ import { clerkMiddleware } from '@clerk/express';
 import userRoutes from './routes/userRoutes';
 import authRoutes from './routes/authRoutes';
 import cliRoutes from './routes/cliRoutes';
+import memoryRoutes from './routes/memoryRoutes';
 
 const app = express();
 
@@ -23,6 +24,9 @@ app.use(clerkMiddleware());
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/cli', cliRoutes);
+app.use('/api/cli', memoryRoutes);
+
+
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
